@@ -1,11 +1,14 @@
 package test.test;
 
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import pageFactory.Browse_Issues;
 import pageFactory.Login;
-import util.RunEnvironment;
-import util.Utils;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class TestBrowseIssues {
@@ -13,12 +16,17 @@ public class TestBrowseIssues {
     Login login;
     Browse_Issues browseIssues;
     WebDriver driver;
+    String baseUrl, nodeUrl;
 
     @BeforeEach
-    public void setup(){
-        Utils.setup();
-        driver = RunEnvironment.getWebDriver();
-        driver.manage().window().maximize();
+    public void setup() throws MalformedURLException{
+        nodeUrl = "http://172.17.0.1:5566/wd/hub";
+        DesiredCapabilities capability = DesiredCapabilities.chrome();
+        capability.setBrowserName("chrome");
+        capability.setPlatform(Platform.LINUX);
+        driver = new RemoteWebDriver(new URL(nodeUrl), capability);
+        //driver = RunEnvironment.getWebDriver();
+        //driver.manage().window().maximize();
         login = new Login(driver);
         browseIssues = new Browse_Issues(driver);
         login.login();
@@ -80,6 +88,7 @@ public class TestBrowseIssues {
 
     @AfterEach
     public void tearDown(){
-        Utils.tearDown();
+        //Utils.tearDown();
+        driver.quit();
     }
 }
