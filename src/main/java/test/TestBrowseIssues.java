@@ -1,6 +1,7 @@
 package test.test;
 
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import pageFactory.Browse_Issues;
@@ -27,6 +28,7 @@ public class TestBrowseIssues {
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
         //driver = RunEnvironment.getWebDriver();
         //driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1280, 720));
         login = new Login(driver);
         browseIssues = new Browse_Issues(driver);
         login.login();
