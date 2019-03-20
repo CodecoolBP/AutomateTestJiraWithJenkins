@@ -21,9 +21,9 @@ public class TestBrowseIssues {
     @BeforeEach
     public void setup() throws MalformedURLException{
         nodeUrl = System.getenv("nodeUrl");
-        DesiredCapabilities capability = DesiredCapabilities.chrome();
-        capability.setBrowserName("chrome");
-        capability.setPlatform(Platform.LINUX);
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        capability.setBrowserName("firefox");
+        //capability.setPlatform(Platform.LINUX);
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
         //driver = RunEnvironment.getWebDriver();
         //driver.manage().window().maximize();
