@@ -7,10 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateIssue {
-    WebDriver driver;
-    WebDriverWait wait;
-
+public class CreateIssue extends PageObject{
 
     @FindBy(id = "create_link")
     WebElement buttonCreateNavbar;
@@ -34,8 +31,7 @@ public class CreateIssue {
     WebElement popupCreateIssue;
 
     public CreateIssue(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

@@ -10,10 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.Utils;
 
-public class NavigateToPages {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private static final int TIMEOUT = 10;
+public class NavigateToPages extends PageObject{
 
     @FindBy(id = "browse_link")
     private WebElement projectsMenuItem;
@@ -34,9 +31,8 @@ public class NavigateToPages {
 
 
     public NavigateToPages(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(this.driver, TIMEOUT);//, POLLING);
     }
 
     public void goToTheProject(String projectName) {

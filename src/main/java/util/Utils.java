@@ -23,12 +23,12 @@ public class Utils {
             if (System.getenv("myDriver").equals("chrome")){
                 System.out.println("1*******************");
                 System.out.println("Launching chrome browser");
-                EnvironmentManagerMac.initChromeWebDriver();
+                EnvironmentManager.initChromeWebDriver();
                 //driver.manage().window().maximize();
             }else {
                 System.out.println("2*******************");
                 System.out.println("Launching firefox browser");
-                EnvironmentManagerMac.initFireFoxWebDriver();
+                EnvironmentManager.initFireFoxWebDriver();
                 //driver.manage().window().maximize();
             }
 
@@ -37,12 +37,12 @@ public class Utils {
             if (System.getenv("myDriver").equals("chrome")){
                 System.out.println("3*******************");
                 System.out.println("Launching chrome browser");
-                EnvironmentManagerWin.initChromeWebDriver();
+                EnvironmentManager.initChromeWebDriver();
 
             }else {
                 System.out.println("4*******************");
                 System.out.println("Launching firefox browser");
-                EnvironmentManagerWin.initFireFoxWebDriver();
+                EnvironmentManager.initFireFoxWebDriver();
 
             }
         }

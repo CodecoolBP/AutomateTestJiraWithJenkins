@@ -10,9 +10,7 @@ import util.Utils;
 
 import java.util.List;
 
-public class GlassDocumentPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class GlassDocumentPage extends PageObject{
     private NavigateToPages navigateToPages;
     private ComponentPage componentPage;
 
@@ -33,9 +31,8 @@ public class GlassDocumentPage {
     //@FindBys(@FindBy)
 
     public GlassDocumentPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(this.driver, TIMEOUT, POLLING);
         navigateToPages = new NavigateToPages(this.driver);
         componentPage = new ComponentPage(this.driver);
     }

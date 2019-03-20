@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class ComponentPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class ComponentPage extends PageObject{
     private NavigateToPages navigateToPages;
 
     private static final int TIMEOUT = 10;
@@ -38,9 +36,7 @@ public class ComponentPage {
     private By submitButtonOnDeleteForm = By.xpath("//input[@id='submit']");
 
     public ComponentPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(this.driver, TIMEOUT);//, POLLING);
+        super(driver);
         navigateToPages = new NavigateToPages(this.driver);
     }
 
