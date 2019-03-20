@@ -69,6 +69,7 @@ public class Browse_Issues {
 
     public WebElement openIssuesOfTestProject(String projectNameToTest){
         navigateToBrowseIssues();
+        wait.until(ExpectedConditions.elementToBeClickable(filterForProject));
         filterForProject.click();
         String lowerCase = projectNameToTest.toLowerCase();
         String upperCase = projectNameToTest.toUpperCase();
