@@ -44,6 +44,9 @@ public class Browse_Issues {
     @FindBy(id="opsbar-operations_more")
     WebElement more;
 
+    @FindBy(xpath = "//*[contains(@class, 'switcher-item active')]")
+    WebElement issueSearchBarSwitcher;
+
     By deleteIssueLocator = By.xpath("//*[@id='delete-issue']/a");
 
     public Browse_Issues(WebDriver driver) {
@@ -69,6 +72,9 @@ public class Browse_Issues {
 
     public WebElement openIssuesOfTestProject(String projectNameToTest){
         navigateToBrowseIssues();
+        if (issueSearchBarSwitcher.getText().equals("Basic")) {
+            issueSearchBarSwitcher.click();
+        }
         wait.until(ExpectedConditions.elementToBeClickable(filterForProject));
         filterForProject.click();
         String lowerCase = projectNameToTest.toLowerCase();
