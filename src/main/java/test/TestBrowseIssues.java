@@ -49,7 +49,7 @@ public class TestBrowseIssues {
         Assertions.assertTrue(browseIssues.openIssuesOfTestProject("Toucan").isDisplayed(), "No such project available");
     }
 
-    @Disabled
+
     @DisplayName("Validate that Toucan project has 3 issues at least")
     @Test
     public void checkToucanProjectIssues(){
