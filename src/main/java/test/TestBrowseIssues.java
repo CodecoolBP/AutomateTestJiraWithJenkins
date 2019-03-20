@@ -20,7 +20,7 @@ public class TestBrowseIssues {
 
     @BeforeEach
     public void setup() throws MalformedURLException{
-        nodeUrl = "http://172.17.0.1:5566/wd/hub";
+        nodeUrl = System.getenv("nodeUrl");
         DesiredCapabilities capability = DesiredCapabilities.chrome();
         capability.setBrowserName("chrome");
         capability.setPlatform(Platform.LINUX);
