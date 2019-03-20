@@ -72,6 +72,7 @@ public class Browse_Issues {
 
     public WebElement openIssuesOfTestProject(String projectNameToTest){
         navigateToBrowseIssues();
+        driver.switchTo().alert().accept();
         wait.until(ExpectedConditions.visibilityOf(issueSearchBarSwitcher));
         if (issueSearchBarSwitcher.getText().equals("Basic")) {
             issueSearchBarSwitcher.click();
