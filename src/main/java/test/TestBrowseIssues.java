@@ -28,7 +28,7 @@ public class TestBrowseIssues {
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
         //driver = RunEnvironment.getWebDriver();
         //driver.manage().window().maximize();
-        driver.manage().window().setSize(new Dimension(1280, 720));
+        driver.manage().window().setSize(new Dimension(1024, 768));
         login = new Login(driver);
         browseIssues = new Browse_Issues(driver);
         login.login();
