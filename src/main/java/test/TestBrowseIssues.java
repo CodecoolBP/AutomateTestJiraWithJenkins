@@ -70,12 +70,14 @@ public class TestBrowseIssues {
         Assertions.assertTrue(browseIssues.isMinimumNumberOfIssuesArePresent(3), "Minimum issue number not reached");
     }
 
+    @Disabled
     @DisplayName("Validate that Jeti project is available")
     @Test
     public void checkJetiProjectAvailability() {
         Assertions.assertTrue(browseIssues.openIssuesOfTestProject("Jeti").isDisplayed(), "No such project available");
     }
 
+    @Disabled
     @DisplayName("Validate that Jeti project has 3 issues at least")
     @Test
     public void checkJetiProjectIssues(){
