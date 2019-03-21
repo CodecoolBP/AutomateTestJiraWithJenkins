@@ -1,4 +1,4 @@
-package test.test;
+package test;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;

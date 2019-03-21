@@ -10,10 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class VersionsWithGlassPage {
-
-    WebDriver driver;
-    Wait wait;
+public class VersionsWithGlassPage extends PageObject{
     String releasesPageOfAProject = "https://jira.codecool.codecanvas.hu/projects/PP5?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=no-filter";
     String glassPageOfAProject = "https://jira.codecool.codecanvas.hu/projects/PP5?selectedItem=com.codecanvas.glass:glass";
 
@@ -39,7 +36,7 @@ public class VersionsWithGlassPage {
     WebElement versionHeader;
 
     public VersionsWithGlassPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         wait = new WebDriverWait(driver, 3000);
         PageFactory.initElements(driver, this);
     }

@@ -8,10 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login {
-    WebDriver driver;
-    WebDriverWait wait;
-
+public class Login extends PageObject{
     @FindBy(id = "login-form-username")
     WebElement userName;
 
@@ -37,8 +34,7 @@ public class Login {
     WebElement logoutSign;
 
     public Login(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
