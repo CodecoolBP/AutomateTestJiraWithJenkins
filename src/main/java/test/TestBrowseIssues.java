@@ -1,8 +1,7 @@
-package test.test;
+package test;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import pageFactory.Browse_Issues;
 import pageFactory.Login;
@@ -17,17 +16,14 @@ public class TestBrowseIssues {
     Login login;
     Browse_Issues browseIssues;
     WebDriver driver;
-    String baseUrl, nodeUrl;
+    String baseUrl, nodeUrl, browserName;
 
     @BeforeEach
     public void setup() throws MalformedURLException{
         nodeUrl = System.getenv("nodeUrl");
-        DesiredCapabilities capability = DesiredCapabilities.firefox();
-        capability.setBrowserName("firefox");
-        //capability.setPlatform(Platform.LINUX);
+        DesiredCapabilities capability = DesiredCapabilities.chrome();
+        capability.setBrowserName(browserName);
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
-        //driver = RunEnvironment.getWebDriver();
-        //driver.manage().window().maximize();
         driver.manage().window().setSize(new Dimension(1024, 768));
         login = new Login(driver);
         browseIssues = new Browse_Issues(driver);
