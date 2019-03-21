@@ -16,12 +16,11 @@ public class TestBrowseIssues {
     Login login;
     Browse_Issues browseIssues;
     WebDriver driver;
-    String baseUrl, nodeUrl;
+    String nodeUrl;
 
     @BeforeEach
     public void setup() throws MalformedURLException{
         nodeUrl = System.getenv("nodeUrl");
-
         DesiredCapabilities capability = DesiredCapabilities.firefox();
         capability.setBrowserName("firefox");
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
