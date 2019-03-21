@@ -16,13 +16,13 @@ public class TestBrowseIssues {
     Login login;
     Browse_Issues browseIssues;
     WebDriver driver;
-    String baseUrl, nodeUrl, browserName;
+    String baseUrl, nodeUrl;
 
     @BeforeEach
     public void setup() throws MalformedURLException{
         nodeUrl = System.getenv("nodeUrl");
         DesiredCapabilities capability = DesiredCapabilities.chrome();
-        capability.setBrowserName(browserName);
+        capability.setBrowserName("chrome");
         driver = new RemoteWebDriver(new URL(nodeUrl), capability);
         driver.manage().window().setSize(new Dimension(1024, 768));
         login = new Login(driver);
