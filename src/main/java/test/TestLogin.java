@@ -32,7 +32,6 @@ public class TestLogin {
         Assertions.assertFalse(login.isLoggedIn(), "Confirm you are not logged in");
     }
 
-    @Disabled
     @DisplayName("Successful login test")
     @Test
     public void testSuccessfulLoginAndLogout() {
