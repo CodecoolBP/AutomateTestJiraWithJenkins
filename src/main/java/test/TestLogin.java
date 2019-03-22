@@ -3,6 +3,7 @@ package test;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import pageFactory.Login;
 import util.RunEnvironment;
@@ -19,7 +20,7 @@ public class TestLogin {
         Utils.setup();
         driver = RunEnvironment.getWebDriver();
         login = new Login(driver);
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1280, 720));
     }
 
     @DisplayName("Test login with wrong and empty details")
