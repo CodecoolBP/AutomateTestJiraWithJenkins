@@ -8,7 +8,6 @@ import pageFactory.Login;
 import util.RunEnvironment;
 import util.Utils;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 public class TestLogin {
 
