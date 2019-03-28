@@ -3,6 +3,8 @@ package test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import pageFactory.BrowseProjects;
 import pageFactory.Login;
@@ -21,7 +23,8 @@ public class BrowseProjectsTest {
     public void setup() {
         Utils.setup();
         driver = RunEnvironment.getWebDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().setPosition(new Point(0, 0));
+        driver.manage().window().setSize(new Dimension(1280, 720));
         login = new Login(driver);
         browseProjects = new BrowseProjects(driver);
         login.login();
