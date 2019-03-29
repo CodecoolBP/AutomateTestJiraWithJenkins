@@ -52,7 +52,7 @@ public class BrowseProjectsTest {
         assertEquals(true, browseProjects.useSearchBarToFindAProject("testing"));
     }
 
-        @Test
+    @Test
     public void filterByProjectTypes_test() {
         assertEquals(true, browseProjects.filterByProjectTypes());
     }
